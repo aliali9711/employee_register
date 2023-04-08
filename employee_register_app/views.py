@@ -1,11 +1,18 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+
+from .forms import employeeForm
+
 
 
 def employee_list (request):
-    return()
+    return  render(request,'employee_register_app\employee_list.html')
 
 def employee_form (request):
-    return()
+    form=employeeForm()
+    content={
+        'form':form
+    }
+    return  render(request,'employee_register_app\employee_form.html', content)
+
 def employee_delete (request):
     return()

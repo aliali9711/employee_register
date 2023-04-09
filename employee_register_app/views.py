@@ -9,6 +9,11 @@ def employee_list (request):
 
 def employee_form (request):
     form=employeeForm()
+    if request.method=='POST':
+            if form.is_valid():
+
+                form=employeeForm()
+                form.save()
     content={
         'form':form
     }
